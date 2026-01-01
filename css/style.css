@@ -1,0 +1,62 @@
+body {
+	text-shadow: 0 0 2px;
+	font-family: 'Inter', sans-serif;
+	background-color: #f8fafc; /* Approach to Tailwind slate-50/100 visual */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+	font-family: 'Manrope', sans-serif;
+}
+/* Custom Blur Reveal Animation */
+@keyframes blur-reveal {
+	0% {
+		opacity: 0;
+		filter: blur(16px);
+		transform: translateY(20px) scale(0.98);
+	}
+	100% {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(0) scale(1);
+	}
+}
+.animate-enter {
+	animation: blur-reveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	opacity: 0; /* Start hidden */
+}
+.delay-100 {
+	animation-delay: 0.1s;
+}
+.delay-200 {
+	animation-delay: 0.2s;
+}
+.delay-300 {
+	animation-delay: 0.3s;
+}
+/* Custom Checkbox */
+.custom-checkbox:checked {
+	background-color: #3b82f6; /* Blue 500 */
+	border-color: #3b82f6;
+}
+.custom-checkbox:checked::after {
+	content: '';
+	display: block;
+	width: 4px;
+	height: 8px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	margin-left: 5px;
+	margin-top: 1px;
+}
+/* Ensuring icons have correct stroke width visually where possible */
+iconify-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
